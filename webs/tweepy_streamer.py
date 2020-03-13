@@ -52,7 +52,7 @@ class OutLinstener(StreamListener):
             print("Error on_data: s" % str(e))
             pass
 
-        if self.num_tweets < 300:
+        if self.num_tweets < 5000:
             return True
         else:
             return False  # Closes the stream.
@@ -62,8 +62,8 @@ class OutLinstener(StreamListener):
         
 if __name__ == "__main__":
 
-    hash_tag_list1 = ['enjoy']
-    fetched_tweets_filename1 = "pleasing.csv"
+    hash_tag_list1 = ['today']
+    fetched_tweets_filename1 = "today.csv"
     
     twitter_streamer1 = TwitterStreamer()
     twitter_streamer1.stream_tweets(fetched_tweets_filename1, hash_tag_list1)
