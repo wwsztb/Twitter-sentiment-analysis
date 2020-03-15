@@ -7,6 +7,10 @@ from nltk.tokenize import word_tokenize
 from string import punctuation
 from nltk.corpus import stopwords
 import pandas as pd
+'''
+The address of the personal computer was used in the final file creation of this file
+Please change them to 'yourpath'+\\webs\\preprosessing\\the emotion.csv '
+'''
 nltk.download("stopwords")
 excitementlist = []
 happylist = []
@@ -16,6 +20,7 @@ fearlist = []
 angrylist = []
 
 data = pd.read_csv('today.csv',header=None, usecols=[3])
+data.drop_duplicates(inplace=True)
 happylex = pd.read_csv('lex//happyLex.csv',header=None,usecols=[1])
 happylex = np.array(happylex)#np.ndarray()
 happylex.flatten()
@@ -207,7 +212,7 @@ Tweetclassifier = classifier()
 
 processedsample.applymap(Tweetclassifier.judge)
 
-
+print('The results are as follows')
 
 
 print(len(excitementlist))

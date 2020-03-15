@@ -21,7 +21,7 @@ class TwitterStreamer():
     
     
     def stream_tweets(self, fetched_tweets_filename, hash_tag_list):
-        listener = OutLinstener(fetched_tweets_filename)
+        listener = Linstener(fetched_tweets_filename)
         auth = OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
         auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
         stream = Stream(auth, listener)
@@ -30,7 +30,7 @@ class TwitterStreamer():
 
 
 
-class OutLinstener(StreamListener):
+class Linstener(StreamListener):
 
     
     def __init__(self, fetched_tweets_filename,):
